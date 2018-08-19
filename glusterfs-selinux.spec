@@ -1,6 +1,6 @@
 %global selinuxtype targeted
 %global moduletype contrib
-%global modulename glusterfs
+%global modulename glusterd
 %global selinux_policyver POLICY_VERSION
 
 
@@ -11,7 +11,7 @@ Summary:	Glusterfs selinux policy
 
 License:	GPLv2
 URL:		https://github.com/gluster/glusterfs-selinux
-Source0:	glusterfs-selinux.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:	git
@@ -36,7 +36,7 @@ SELinux targeted policy modules for glusterfs.
 
 
 %prep
-%setup -q -n %{name}.git
+%setup -q -n %{name}-%{version}
 
 
 %build
@@ -71,7 +71,7 @@ fi
 %defattr(-,root,root,0755)
 %attr(0644,root,root) %{_datadir}/selinux/packages/%{modulename}.pp.bz2
 %attr(0644,root,root) %{_datadir}/selinux/devel/include/contrib/glusterd.if
-%ghost %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{selinuxmodulename}
+%ghost %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
 
 
 
