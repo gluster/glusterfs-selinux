@@ -6,8 +6,8 @@
 
 Name:		glusterfs-selinux
 Version:	0.1.0
-Release:	1%{?dist}
-Summary:	Glusterfs selinux policy
+Release:	2%{?dist}
+Summary:	Glusterfs targeted SELinux policy
 
 License:	GPLv2
 URL:		https://github.com/gluster/glusterfs-selinux
@@ -28,11 +28,9 @@ Requires(post): policycoreutils-python-utils
 Requires(post): policycoreutils-python
 %endif
 
-BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-
 
 %description
-SELinux targeted policy modules for glusterfs.
+SELinux targeted policy modules for glusterfs
 
 
 %prep
@@ -59,7 +57,7 @@ install -d -p %{buildroot}%{_datadir}/selinux/devel/include/%{moduletype}
 
 %postun
 if [ $1 -eq 0 ]; then
-        %selinux_modules_uninstall -s %{selinuxtype} %{modulename}
+    %selinux_modules_uninstall -s %{selinuxtype} %{modulename}
 fi
 
 
@@ -68,14 +66,16 @@ fi
 
 
 %files
-%defattr(-,root,root,0755)
 %attr(0644,root,root) %{_datadir}/selinux/packages/%{modulename}.pp.bz2
-%attr(0644,root,root) %{_datadir}/selinux/devel/include/contrib/glusterd.if
+%attr(0644,root,root) %{_datadir}/selinux/devel/include/contrib/%{modulename}.if
 %ghost %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
 
 
 
 %changelog
+* Thu Nov 15 2018 Milind Changire <mchangir@redhat.com> - 0.1.0-2
+- corrections toward review request comments from misc - bz#1649713
+
 * Mon Jul 02 2018 Milind Changire <mchangir@redhat.com> - 0.1.0-1
 - first build
 
