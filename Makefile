@@ -1,6 +1,7 @@
 TARGET?=glusterd
 MODULES?=${TARGET:=.pp.bz2}
 SHAREDIR?=/usr/share
+SELINUXTYPE?=targeted
 
 VERSION = 0.1.0
 PACKAGE = glusterfs-selinux
@@ -35,8 +36,8 @@ install-policy: all
 	semodule -i ${TARGET}.pp.bz2
 
 install:
-	install -D -m 644 ${TARGET}.pp.bz2 ${DESTDIR}${SHAREDIR}/selinux/packages/${TARGET}.pp.bz2
-	install -D -m 644 ${TARGET}.if ${DESTDIR}${SHAREDIR}/selinux/devel/include/contrib/${TARGET}.if
+	install -D -m 644 ${TARGET}.pp.bz2 ${DESTDIR}${SHAREDIR}/selinux/packages/${SELINUXTYPE}/${TARGET}.pp.bz2
+	install -D -p -m 644 ${TARGET}.if ${DESTDIR}${SHAREDIR}/selinux/devel/include/contrib/ipp-${TARGET}.if
 #	install -D -m 644 ${TARGET}_selinux.8 ${DESTDIR}${SHAREDIR}/man/man8/
 
 am__tar = $${TAR-tar} chof - "$$tardir"
