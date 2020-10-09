@@ -301,6 +301,15 @@ interface(`glusterd_admin',`
 ')
 
 ########################################
+# 
+# Interface compatibility blocks
+#
+# The following definitions ensure compatibility with distribution policy
+# versions that do not contain given interfaces.
+# Each block tests for existence of given interface and defines it if needed.
+#
+
+########################################
 ## <summary>
 ##	Read and write rsync unix_stream_sockets.
 ## </summary>
