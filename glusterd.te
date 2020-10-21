@@ -345,3 +345,16 @@ gen_require(`
 
 manage_dirs_pattern(ssh_keygen_t, glusterd_var_lib_t, glusterd_var_lib_t)
 manage_files_pattern(ssh_keygen_t, glusterd_var_lib_t, glusterd_var_lib_t)
+
+########################################
+#
+# Local policy for rsync_t
+#
+
+optional_policy(`
+	gen_require(`
+		type rsync_t;
+	')
+
+	allow rsync_t self:capability sys_admin;
+')
