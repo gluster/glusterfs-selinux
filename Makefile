@@ -37,7 +37,7 @@ install-policy: all
 
 install:
 	install -D -m 644 ${TARGET}.pp.bz2 ${DESTDIR}${SHAREDIR}/selinux/packages/${SELINUXTYPE}/${TARGET}.pp.bz2
-	install -D -p -m 644 ${TARGET}.if ${DESTDIR}${SHAREDIR}/selinux/devel/include/contrib/ipp-${TARGET}.if
+#	install -D -p -m 644 ${TARGET}.if ${DESTDIR}${SHAREDIR}/selinux/devel/include/contrib/ipp-${TARGET}.if
 #	install -D -m 644 ${TARGET}_selinux.8 ${DESTDIR}${SHAREDIR}/man/man8/
 
 am__tar = $${TAR-tar} chof - "$$tardir"

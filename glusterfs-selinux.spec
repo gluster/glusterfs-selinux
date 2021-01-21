@@ -5,7 +5,7 @@
 
 Name:		glusterfs-selinux
 Version:	0.1.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Glusterfs targeted SELinux policy
 
 License:	GPLv2
@@ -13,14 +13,9 @@ URL:		https://github.com/gluster/glusterfs-selinux
 Source0:	%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  git
-Requires:       selinux-policy-targeted
-Requires(post): selinux-policy-targeted
-BuildRequires:  pkgconfig(systemd)
+Requires:       selinux-policy-%{selinuxtype}
+Requires(post): selinux-policy-%{selinuxtype}
 BuildRequires:  selinux-policy-devel
-Requires(post): selinux-policy-targeted
-Requires(post): libselinux-utils
-Requires(post): policycoreutils
 %{?selinux_requires}
 
 
@@ -60,13 +55,12 @@ fi
 
 %files
 %{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.*
-%{_datadir}/selinux/devel/include/%{moduletype}/ipp-%{modulename}.if
 %ghost %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
-
+%license COPYING
 
 
 %changelog
-* Thu May 07 2020 Vit Mojzis <vmojzis@redhat.com> - 0.1.0-2
+* Thu May 07 2020 Vit Mojzis <vmojzis@redhat.com> - 0.1.0-3
 - Update based on DSP guidelines
   https://fedoraproject.org/wiki/SELinux/IndependentPolicy
 
