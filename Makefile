@@ -49,6 +49,7 @@ distdir: $(DISTFILES)
 	test -f "$(distdir)/glusterd.if" || cp -p glusterd.if "$(distdir)/glusterd.if"
 	test -f "$(distdir)/glusterd.te" || cp -p glusterd.te "$(distdir)/glusterd.te"
 	test -f "$(distdir)/Makefile" || cp -p  Makefile "$(distdir)/Makefile"
+	test -f "$(distdir)/COPYING" || cp -p  Makefile "$(distdir)/COPYING"
 
 dist-gzip: distdir
 	tardir=$(distdir) && $(am__tar) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).tar.gz
