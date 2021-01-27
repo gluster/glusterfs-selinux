@@ -4,8 +4,8 @@
 
 
 Name:		glusterfs-selinux
-Version:	0.1.0
-Release:	3%{?dist}
+Version:	0.1.1
+Release:	4%{?dist}
 Summary:	Glusterfs targeted SELinux policy
 
 License:	GPLv2
@@ -60,6 +60,9 @@ fi
 
 
 %changelog
+* Wed Jan 27 2021 Rinku Kothiya <rkothiya@redhat.com> - 0.1.1-4
+- Incorporated review comments - bz#1901123
+
 * Thu May 07 2020 Vit Mojzis <vmojzis@redhat.com> - 0.1.0-3
 - Update based on DSP guidelines
   https://fedoraproject.org/wiki/SELinux/IndependentPolicy
