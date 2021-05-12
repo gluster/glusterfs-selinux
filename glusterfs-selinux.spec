@@ -3,14 +3,14 @@
 %global modulename glusterd
 
 
-Name:		glusterfs-selinux
-Version:	0.1.1
-Release:	4%{?dist}
-Summary:	Glusterfs targeted SELinux policy
+Name:           glusterfs-selinux
+Version:        0.1.1
+Release:        4%{?dist}
+Summary:        Glusterfs targeted SELinux policy
 
-License:	GPLv2
-URL:		https://github.com/gluster/glusterfs-selinux
-Source0:	%{name}-%{version}.tar.gz
+License:        GPLv2
+URL:            https://github.com/gluster/glusterfs-selinux
+Source0:        %{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 Requires:       selinux-policy-%{selinuxtype}
