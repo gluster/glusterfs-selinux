@@ -33,6 +33,10 @@ make %{?_smp_mflags}
 
 %install
 %make_install
+%if 0%{?fedora} >= 33 || 0%{?rhel} >= 8
+	install -D -p -m 644 ${TARGET}.if ${DESTDIR}${SHAREDIR}/selinux/devel/include/contrib/ipp-${TARGET}.if
+%endif
+
 
 
 %pre
@@ -54,6 +58,9 @@ fi
 
 
 %files
+%if 0%{?fedora} >= 33 || 0%{?rhel} >= 8
+	%{_datadir}/selinux/devel/include/%{moduletype}/ipp-%{modulename}.if
+%endif
 %{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.*
 %ghost %attr(700, root, root) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
 %license COPYING
