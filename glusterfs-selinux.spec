@@ -56,6 +56,9 @@ fi
 %files
 %{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.*
 %ghost %attr(700, root, root) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
+%ghost %attr(600, root, root) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}/cil
+%ghost %attr(600, root, root) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}/hll
+%ghost %attr(600, root, root) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}/lang_ext
 %license COPYING
 
 
