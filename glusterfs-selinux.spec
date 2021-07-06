@@ -4,7 +4,7 @@
 
 
 Name:           glusterfs-selinux
-Version:        0.1.1
+Version:        2.0.1
 Release:        4%{?dist}
 Summary:        Glusterfs targeted SELinux policy
 
@@ -63,6 +63,9 @@ fi
 
 
 %changelog
+* Tue Jul 6 2021 Shwetha K Acharya <sacharya@redhat.com>
+- Tagging release 2.0.1
+
 * Wed Jan 27 2021 Rinku Kothiya <rkothiya@redhat.com> - 0.1.1-4
 - Incorporated review comments - bz#1901123
 
