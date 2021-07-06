@@ -3,7 +3,7 @@ MODULES?=${TARGET:=.pp.bz2}
 SHAREDIR?=/usr/share
 SELINUXTYPE?=targeted
 
-VERSION = 0.1.1
+VERSION = 2.0.1
 PACKAGE = glusterfs-selinux
 distdir = $(PACKAGE)-$(VERSION)
 DIST_TARGETS = dist-gzip
