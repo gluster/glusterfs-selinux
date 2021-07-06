@@ -5,7 +5,7 @@
 
 Name:           glusterfs-selinux
 Version:        2.0.1
-Release:        4%{?dist}
+Release:        1%{?dist}
 Summary:        Glusterfs targeted SELinux policy
 
 License:        GPLv2
