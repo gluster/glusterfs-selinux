@@ -129,6 +129,9 @@ kernel_read_system_state(glusterd_t)
 kernel_read_network_state(glusterd_t)
 kernel_read_net_sysctls(glusterd_t)
 kernel_request_load_module(glusterd_t)
+ifdef(`kernel_io_uring_use',`
+	kernel_io_uring_use(glusterd_t)
+')
 
 corecmd_exec_bin(glusterd_t)
 corecmd_exec_shell(glusterd_t)
